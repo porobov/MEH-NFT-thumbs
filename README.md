@@ -1,6 +1,6 @@
 # MEH NFT Metadata Generator
 
-This repository contains a script to generate static metadata files for The Million Ether Homepage NFT collection. These files can be hosted on GitHub Pages to serve as a static API.
+This repository contains a script to generate static metadata files for The Million Ether Homepage NFT collection. These files are hosted on GitHub Pages to serve as a static API.
 
 ## Setup
 
@@ -9,46 +9,66 @@ This repository contains a script to generate static metadata files for The Mill
 3. Run the generator:
 
 ```bash
-node scripts/generate-static-metadata.js
+node src/generate-static-metadata.js
 ```
 
-This will create a `static-metadata` directory containing JSON files for each token (1-10000).
+This will create metadata files in the `docs/token` directory for each token (1-10000).
 
 ## GitHub Pages Setup
 
-1. Create a new GitHub repository
-2. Push the generated `static-metadata` directory to the repository
-3. Enable GitHub Pages in your repository settings
-4. Set the source to the branch containing your files
+The repository is configured to serve the metadata through GitHub Pages:
+1. Files are stored in the `docs` directory
+2. GitHub Pages is enabled and configured to serve from the `docs` directory
+3. The `.nojekyll` file prevents Jekyll processing
+4. The `_headers` file sets the correct MIME type for the metadata files
 
 ## API Usage
 
-Once deployed, you can access the metadata for any token using:
+The metadata is accessible through:
 
 ```
-https://[your-github-username].github.io/[repo-name]/static-metadata/[token-id].json
+https://api.themillionetherhomepage.com/token/[token-id]
 ```
 
 For example, to get metadata for token #15:
 ```
-https://[your-github-username].github.io/[repo-name]/static-metadata/15.json
+https://api.themillionetherhomepage.com/token/15
 ```
 
 ## File Structure
 
-The generated files will be in the following structure:
+The metadata files are stored in the following structure:
 ```
-static-metadata/
-  1.json
-  2.json
-  3.json
-  ...
-  10000.json
+docs/
+  token/
+    1
+    2
+    3
+    ...
+    10000
+    _headers
+  .nojekyll
 ```
 
-Each JSON file contains the metadata for a specific token, including:
+Each file contains the metadata for a specific token, including:
 - Name
 - Attributes (X and Y coordinates)
 - Description
 - External URL
-- Image URL 
+- Image URL
+
+## Metadata Format
+
+Example metadata for token #1:
+```json
+{
+  "name": "Tile #1",
+  "attributes": {
+    "X Coordinate": 1,
+    "Y Coordinate": 1
+  },
+  "description": "This NFT confirms ownership of tile #1 at https://themillionetherhomepage.com. Owner can put ads within the area they own.",
+  "external_url": "https://themillionetherhomepage.com/token/1",
+  "image": "https://api.themillionetherhomepage.com/images/1.png"
+}
+``` 

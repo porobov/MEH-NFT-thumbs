@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Constants
 const TOTAL_TOKENS = 10000;
-const OUTPUT_DIR = path.join(__dirname, '..', 'data', 'token');
+const OUTPUT_DIR = path.join(__dirname, '..', 'docs', 'token');
 const HOST = 'https://api.themillionetherhomepage.com';
 
 // Helper function from the original code
@@ -44,7 +44,7 @@ for (let tokenId = 1; tokenId <= TOTAL_TOKENS; tokenId++) {
     };
 
     // Write the metadata file
-    const filePath = path.join(OUTPUT_DIR, `${tokenId}.json`);
+    const filePath = path.join(OUTPUT_DIR, `${tokenId}`);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 

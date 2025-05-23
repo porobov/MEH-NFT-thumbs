@@ -1,0 +1,10 @@
+{
+  "name": "Tile #42",
+  "attributes": {
+    "X Coordinate": 42,
+    "Y Coordinate": 1
+  },
+  "description": "This NFT confirms ownership of tile #42 at https://themillionetherhomepage.com. Owner can put ads within the area they own.",
+  "external_url": "https://themillionetherhomepage.com/token/42",
+  "image": "https://api.themillionetherhomepage.com/images/42.png"
+}

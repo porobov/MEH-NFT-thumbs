@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Constants
 const TOTAL_TOKENS = 10000;
-const OUTPUT_DIR = path.join(__dirname, '..', 'static-metadata');
+const OUTPUT_DIR = path.join(__dirname, '..', 'data', 'token');
 const HOST = 'https://api.themillionetherhomepage.com';
 
 // Helper function from the original code
@@ -26,7 +26,7 @@ function blockXY(blockId) {
 
 // Create output directory if it doesn't exist
 if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR);
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
 // Generate metadata for each token

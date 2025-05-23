@@ -4,9 +4,9 @@ import * as PImage from "pureimage";
 import * as fs from "fs";
 
 // constants
-const IMG_WIDTH = 3000;
+const IMG_WIDTH = 1000;
 const FONT_NAME = "Inter";
-const FONT_SIZE = 400;
+const FONT_SIZE = 133;
 
 var fnt = PImage.registerFont(
   // "./fonts/Arimo/static/Arimo-Regular.ttf", - the font doesn't work with the package
@@ -50,8 +50,8 @@ export async function generateImage(tileNumber) {
   putText("x:" + tileX + ", y:" + tileY, true)
 
     try {
-      await PImage.encodePNGToStream(img, fs.createWriteStream("./images/" + tileNumber + ".png"));
-      console.log("wrote out the png file to" + tileNumber + ".png");
+      await PImage.encodePNGToStream(img, fs.createWriteStream("./data/images/" + tileNumber + ".png"));
+      console.log("wrote out the png file to " + tileNumber + ".png");
     } catch(e) {
       console.log("there was an error writing");
     }

@@ -2,6 +2,10 @@
 
 This repository contains a script to generate static metadata files for The Million Ether Homepage NFT collection. These files are hosted on GitHub Pages to serve as a static API.
 
+The API is available at:
+```
+https://api.themillionetherhomepage.com/
+```
 ## Setup
 
 1. Make sure you have Node.js installed
@@ -34,7 +38,19 @@ For example, to get metadata for token #15:
 ```
 https://api.themillionetherhomepage.com/token/15
 ```
-
+Response:
+```
+{
+  "name": "Tile #101",
+  "attributes": {
+    "X Coordinate": 1,
+    "Y Coordinate": 2
+  },
+  "description": "Ownership of tile #101 at https://themillionetherhomepage.com. Owner can put ads within the area they own.",
+  "external_url": "https://themillionetherhomepage.com/tokenid/101",
+  "image": "https://api.themillionetherhomepage.com/images/101.png"
+}
+```
 ## File Structure
 
 The metadata files are stored in the following structure:
